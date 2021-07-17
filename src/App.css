@@ -3,29 +3,65 @@
   padding: 0;
   margin: 0;
   font-family: "Rajdhani", sans-serif;
+  box-sizing: border-box;
 }
 button {
   margin: 2rem;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
+  font-size: large;
   border-radius: 15px;
-  border: none;
-}
-h1 {
+  border: 1px solid white;
+  color: white;
   margin: 2rem auto;
+  background-color: transparent;
 }
+
 .App {
   text-align: center;
 }
 
+.Background {
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/originals/d6/46/7f/d6467f33a97d690c7609b54ebe16163c.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60% 15%;
+  -webkit-animation: zoom-in 2s ease-in;
+}
+@keyframes zoom-in {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
 .Container {
   color: white;
+  width: 100vw;
   text-align: center;
   padding: 10%;
-  background: rgb(204, 86, 30);
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  /*  background: rgb(204, 86, 30);
   background: linear-gradient(
     0deg,
     rgba(204, 86, 30, 1) 54%,
     rgba(170, 43, 29, 1) 100%
-  );
+  ); */
   min-height: 100vh;
+}
+
+.infoCity h3 {
+  font-size: 2.5rem;
+  color: white;
+}
+.infoCity h1 {
+  margin: 2rem auto 3rem auto;
+  font-size: xx-larger;
+  color: white;
 }

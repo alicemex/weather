@@ -7,8 +7,6 @@ const Header = ()=> {
     }
     return(
         <div className="Header">
-           
-            
         <button type="button" onClick={handleClick}> {darkMode ? 'Darkmode': 'LightMode'} </button>
         </div> 
     );

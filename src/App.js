@@ -1,6 +1,7 @@
 import './App.css';
-import  Header from './components/Header.jsx'
-import Characters from './components/Characters.jsx'
+
+import GetTemp from './components/GetTemp.jsx'
+import GetLocation from './components/GetLocation.jsx'
 
 
 
@@ -9,12 +10,14 @@ function App() {
    
 
     return ( 
-        <div className ="Container">
-            <Header>
-                
-            </Header>  <Characters></Characters>
+       <div className="Background">
+            <div className ="Container">
+          
+             <GetTemp></GetTemp>
+             <GetLocation></GetLocation>
                
         </div>     
+       </div>
         );
     }
 
