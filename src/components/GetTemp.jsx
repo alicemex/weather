@@ -5,17 +5,14 @@ const GetTemp = () =>{
     const[infoCity, setInfoCity] = useState({current:"marcia"});
     const[englishUnits, setEnglishUnits] = useState([true]);
    
-    useEffect( async ()=>{
-        try{
-        const result  = await fetch("https://api.weatherapi.com/v1/current.json?key=093aeef86e954c19abd12149210207&q=London&aqi=yes");
-        const filfulledValue = await result;  
-        var promise = filfulledValue.json();
-            setInfoCity(promise);     
+  useEffect( ()=>{
+        const log = async () => {
+            const url = "https://api.weatherapi.com/v1/current.json?key=093aeef86e954c19abd12149210207&q=London&aqi=yes";
+        const weatherD  = await fetch(url).then((response)=>response.json());  
+          setInfoCity(weatherD);
+          console.log(lat);
         }
-        catch (rejectedValue)
-        {
-            console.log("no se cumplió el fetch");
-        }
+        log();
        // return value.json();
     },
     []);
@@ -25,11 +22,11 @@ const GetTemp = () =>{
     }
     return(
         <div className="infoCity">
-              <h1>Weather</h1>
-              {console.log(infoCity)}
-             {/*  <h3>City: {(infoCity.location.name)}</h3>
-                <h3> Temp: {englishUnits ? `${infoCity.current.temp_c} °C`: ` ${infoCity.current.temp_f} °F`} </h3> */}
+              <h1>Weather</h1>         
+               <h3>City: {(infoCity.location.name)}</h3>
+                <h3> Temp: {englishUnits ? `${infoCity.current.temp_c} °C`: ` ${infoCity.current.temp_f} °F`} </h3>
                 <button onClick={changeUnits}>Change Units</button>
+               <div><br></br><br></br></div>
                 <GetLocation></GetLocation> 
         </div>
     );
