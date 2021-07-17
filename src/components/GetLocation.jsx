@@ -16,9 +16,10 @@ const dataLocationReturned = ()=>{
 useEffect(()=>{
     dataLocationReturned(infoLocation,setInfoLocation);
 },[]);
-
+let lat = infoLocation.lat;
+let lng = infoLocation.lng;
     return (
-        <div>Current location: Latitude: {infoLocation.lat} Longintud:  {infoLocation.lng}  </div>
+        <div>Current location: Latitude: {lat} Longintud:  {lng}  </div>
     );
 }
 export default GetLocation;

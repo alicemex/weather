@@ -1,7 +1,7 @@
 import './App.css';
 
 import GetTemp from './components/GetTemp.jsx'
-import GetLocation from './components/GetLocation.jsx'
+
 
 
 
@@ -14,7 +14,7 @@ function App() {
             <div className ="Container">
           
              <GetTemp></GetTemp>
-             <GetLocation></GetLocation>
+            
                
         </div>     
        </div>
