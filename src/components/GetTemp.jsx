@@ -5,8 +5,25 @@ const GetTemp = () =>{
     /*variable de estado para hacer get a la cordenadas*/
     const [infoLocation, setInfoLocation] = useState({lat:0, lng:0});
     /*para recibir datos de la api del weater*/
-    const[infoCity, setInfoCity] = useState({current:"", location: ""});
-    /*cambiar unidades*/
+    const[infoCity, setInfoCity] = useState({
+      location: {
+      name: "",
+      region: "",
+      country: "",
+      lat: 0,
+      lon: 0,
+    },
+   current: {
+      temp_c:0,
+      temp_f:0,
+      is_day:-1,
+      condition: {
+        text: "",
+        icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+      }
+    }
+  });
+    /*cambiar unidades*/           
     const[englishUnits, setEnglishUnits] = useState([true]);
 
     /*cambiar el fondo si es de noche o de dia*/
@@ -44,7 +61,7 @@ const GetTemp = () =>{
         <div className="infoCity">
               <h1>Weather </h1>         
               <h2>City: {(infoCity.location.region)}, {(infoCity.location.country)}</h2>
-                <h3> Temp: {englishUnits ? `${infoCity.current.temp_c} °C`: ` ${infoCity.current.temp_f} °F`} </h3>  
+                <h3> Temp: {englishUnits ? `${infoCity.current.temp_c}  °C`: ` ${infoCity.current.temp_f} °F`} </h3>  
                 
                 {/* <h3> <img src={(infoCity.current.condition).icon} alt="icono" /></h3>
                 <h2>{(infoCity.current.condition).text} </h2>
