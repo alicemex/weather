@@ -5,7 +5,7 @@ const GetTemp = () =>{
     /*variable de estado para hacer get a la cordenadas*/
     const [infoLocation, setInfoLocation] = useState({lat:0, lng:0});
     /*para recibir datos de la api del weater*/
-    const[infoCity, setInfoCity] = useState({current:"marcia"});
+    const[infoCity, setInfoCity] = useState({current:"", location: ""});
     /*cambiar unidades*/
     const[englishUnits, setEnglishUnits] = useState([true]);
 
@@ -46,9 +46,9 @@ const GetTemp = () =>{
               <h2>City: {(infoCity.location.region)}, {(infoCity.location.country)}</h2>
                 <h3> Temp: {englishUnits ? `${infoCity.current.temp_c} °C`: ` ${infoCity.current.temp_f} °F`} </h3>  
                 
-                <h3> <img src={(infoCity.current.condition).icon} alt="icono" /></h3>
+                {/* <h3> <img src={(infoCity.current.condition).icon} alt="icono" /></h3>
                 <h2>{(infoCity.current.condition).text} </h2>
-                {/* <div>{isDay ? "Es de día" : `<h3>Es de noche</h3>`} </div> */}
+                <div>{isDay ? "Es de día" : `<h3>Es de noche</h3>`} </div> */}
                 <button onClick={changeUnits}>Change Units</button>
                 {/* <GetLocation> </GetLocation>  */}
         </div>
