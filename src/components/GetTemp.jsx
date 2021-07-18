@@ -60,7 +60,7 @@ const GetTemp = () =>{
     return(
         <div className="infoCity">
               <h1>Weather </h1>         
-              <h2>City: {(infoCity.location.region)}, {(infoCity.location.country)}</h2>
+              <h2>City: {(infoCity.location.name)}, {(infoCity.location.country)}</h2>
                 <h3> Temp: {englishUnits ? `${infoCity.current.temp_c}  °C`: ` ${infoCity.current.temp_f} °F`} </h3>  
                 
                 {/* <h3> <img src={(infoCity.current.condition).icon} alt="icono" /></h3>
